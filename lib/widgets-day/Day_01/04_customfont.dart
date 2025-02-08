@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class kCustomFontText extends StatelessWidget {
-  const kCustomFontText({super.key});
+class KCustomFontText extends StatelessWidget {
+  const KCustomFontText({super.key});
 
   @override
   Widget build(BuildContext context) {

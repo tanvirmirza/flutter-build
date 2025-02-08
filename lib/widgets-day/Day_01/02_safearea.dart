@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class kSafeArea extends StatelessWidget {
-  const kSafeArea({super.key});
+class KSafeArea extends StatelessWidget {
+  const KSafeArea({super.key});
 
   @override
   Widget build(BuildContext context) {

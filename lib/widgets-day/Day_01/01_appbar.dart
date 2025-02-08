@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 
 
-class kAppBar extends StatelessWidget {
-  const kAppBar({super.key});
+class KAppBar extends StatelessWidget {
+  const KAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
