@@ -17,23 +17,31 @@ class _KPassDataState extends State<KPassData> {
         title: Text('Pass Data'),
       ),
       body: Center(
-        child: TextField(
-          controller: textController,
-          decoration: InputDecoration(
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(50)),
-            prefix: Icon(Icons.text_fields),
-            suffix: IconButton(
-              onPressed: () {
-                setState(() {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => ShowData(
-                                text: textController.text,
-                              )));
-                });
-              },
-              icon: Icon(Icons.navigate_next, color: Colors.indigo,),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: TextField(
+            controller: textController,
+            decoration: InputDecoration(
+              hintText: 'Try Somthing...',
+              border:
+                  OutlineInputBorder(borderRadius: BorderRadius.circular(50)),
+              prefixIcon: Icon(Icons.text_fields),
+              suffixIcon: IconButton(
+                onPressed: () {
+                  setState(() {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ShowData(
+                                  text: textController.text,
+                                )));
+                  });
+                },
+                icon: Icon(
+                  Icons.navigate_next,
+                  color: Colors.indigo,
+                ),
+              ),
             ),
           ),
         ),
@@ -42,20 +50,34 @@ class _KPassDataState extends State<KPassData> {
   }
 }
 
-class ShowData extends StatelessWidget {
+class ShowData extends StatefulWidget {
   String text;
   ShowData({required this.text, super.key});
 
   @override
+  State<ShowData> createState() => _ShowDataState();
+}
+
+class _ShowDataState extends State<ShowData> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          setState(() {
+            Navigator.pop(context);
+          });
+        },
+        label: Text('Back'),
+        icon: Icon(Icons.navigate_before),
+      ),
       appBar: AppBar(
         title: Text('Data Page'),
       ),
       body: Center(
         child: Text(
-          text,
-          style: TextStyle(fontSize: 20),
+          widget.text,
+          style: TextStyle(fontSize: 40),
         ),
       ),
     );
