@@ -14,7 +14,7 @@ class _KFormsState extends State<KForms> {
 
   @override
   Widget build(BuildContext context) {
-    final _formKey = GlobalKey<FormState>();
+    final formKey = GlobalKey<FormState>();
 
     return Scaffold(
       appBar: AppBar(
@@ -24,7 +24,7 @@ class _KFormsState extends State<KForms> {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Form(
-            key: _formKey,
+            key: formKey,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -63,7 +63,7 @@ class _KFormsState extends State<KForms> {
                   padding: const EdgeInsets.symmetric(vertical: 16.0),
                   child: ElevatedButton(
                     onPressed: () {
-                      if (_formKey.currentState!.validate() &&
+                      if (formKey.currentState!.validate() &&
                           _controllerPassword.text.length > 6) {
                         Navigator.push(
                             context,
@@ -118,15 +118,17 @@ class TextFormFields extends StatelessWidget {
         if (value == null || value.isEmpty) {
           return errorText;
         }
+        return null;
       },
     );
   }
 }
 
+// ignore: must_be_immutable
 class InfoPage extends StatelessWidget {
-  var name;
-  var email;
-  InfoPage({Key? key, this.name, this.email}) : super(key: key);
+  String name;
+  String email;
+  InfoPage({Key? key, required this.name, required this.email}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
