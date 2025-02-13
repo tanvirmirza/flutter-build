@@ -22,7 +22,7 @@ ThemeData KTheme() {
     buttonTheme: ButtonThemeData(buttonColor: Colors.purpleAccent),
     bottomNavigationBarTheme:
         BottomNavigationBarThemeData(backgroundColor: Colors.deepPurple),
-    bottomSheetTheme: BottomSheetThemeData(backgroundColor: Colors.deepOrange),
+    bottomSheetTheme: BottomSheetThemeData(backgroundColor: Colors.deepOrange.shade700),
     drawerTheme: DrawerThemeData(backgroundColor: Colors.deepPurple.shade200 ,),
     dropdownMenuTheme: DropdownMenuThemeData(
         textStyle: TextStyle(backgroundColor: Colors.black38)),

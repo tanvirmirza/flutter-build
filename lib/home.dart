@@ -10,7 +10,7 @@ class HomePage extends StatelessWidget {
     return MaterialApp(
         theme: KTheme(),
         debugShowCheckedModeBanner: false,
-        title: "PRACTICE WIDGETS",
+        title: 'PRACTICE WIDGETS',
         home: KNavDrawer());
   }
 }

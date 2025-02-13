@@ -22,7 +22,7 @@ class _KPassDataState extends State<KPassData> {
           child: TextField(
             controller: textController,
             decoration: InputDecoration(
-              hintText: 'Try Somthing...',
+              hintText: 'Typing Somthing...',
               border:
                   OutlineInputBorder(borderRadius: BorderRadius.circular(50)),
               prefixIcon: Icon(Icons.text_fields),

@@ -21,7 +21,7 @@ class KNavDrawer extends StatelessWidget {
       drawer: NavigationDrawer(
         children: [
           DrawerHeader(
-              padding: EdgeInsets.all(0),
+              padding: EdgeInsets.all(1),
               child: UserAccountsDrawerHeader(
                   accountName: Text(name),
                   accountEmail: Text('mirzatanvir@gmail.com'),
