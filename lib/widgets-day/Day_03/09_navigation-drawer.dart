@@ -3,13 +3,14 @@ import 'package:flutter/material.dart';
 class KNavDrawer extends StatelessWidget {
   KNavDrawer({super.key});
 
-  String name = 'Mirza Tanvir';
-  List<Widget> icon = [
-    Icon(Icons.home_filled),
-    Icon(Icons.message_rounded),
-    Icon(Icons.account_box_rounded)
+  final String name = 'Mirza Tanvir';
+  
+  final List<Map<String, dynamic>> elements = [
+    {'icon': Icon(Icons.home_filled), 'title': 'Home'},
+    {'icon': Icon(Icons.message_rounded), 'title': 'Message'},
+    {'icon': Icon(Icons.account_box_rounded), 'title': 'Account'}
   ];
-  List<String> title = ['Home', 'Message', 'Account'];
+
 
   @override
   Widget build(BuildContext context) {
@@ -29,12 +30,12 @@ class KNavDrawer extends StatelessWidget {
                     child: Text(name[0] + name.split(' ')[1][0]),
                   ))),
           ...List.generate(
-              icon.length,
+              elements.length,
               (index) => ListTile(
-                  leading: icon[index],
-                  title: Text(title[index]),
+                  leading: elements[index]['icon'],
+                  title: Text(elements[index]['title']),
                   onTap: () {
-                    print('Clicked ${title[index]}');
+                    print('Clicked ${elements[index]['title']}');
                     Navigator.pop(context);
                   }))
         ],

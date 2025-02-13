@@ -51,8 +51,8 @@ class _KPassDataState extends State<KPassData> {
 }
 
 class ShowData extends StatefulWidget {
-  String text;
-  ShowData({required this.text, super.key});
+  final String text;
+  const ShowData({required this.text, super.key});
 
   @override
   State<ShowData> createState() => _ShowDataState();
